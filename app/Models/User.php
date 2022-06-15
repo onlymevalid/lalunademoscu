@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Database\Eloquent\Casts\Attribute;
-   
+use App\Models\Attachment;
+use Carbon\Carbon;
+use Intervention\Image\ImageManagerStatic as Img;
+use File;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -53,7 +56,20 @@ class User extends Authenticatable
      * @param  string  $value
      * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
-    
+    public function attachments()
+    {
+        return $this->hasMany('App\Models\Attachment');
+    }
+
+    public function getCoverAttribute()
+    {
+        return $this->attachments->sortByDesc('cover')->pluck('file')->first();
+    }
+
+    public function getGalleryAttribute()
+    {
+        return $this->attachments->pluck('file')->all();
+    }
 
     public function type()
     {

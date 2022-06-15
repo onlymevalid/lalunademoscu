@@ -5,8 +5,8 @@
         </script> 
        <script src="{{ url('vendor/peity/jquery.peity.min.js')}}" type="text/javascript">
         </script> 
-        <script src="{{ url('js/dashboard/dashboard-1.js')}}" type="text/javascript">
-        </script> 
+        <script src="{{ url('vendor/datatables/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+        <script src="{{ url('js/plugins-init/datatables.init.js') }}" type="text/javascript"></script>
         <script src="{{ url('js/custom.js')}}" type="text/javascript">
         </script> 
         <script src="{{ url('js/dlabnav-init.js')}}" type="text/javascript">

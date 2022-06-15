@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -99,32 +101,10 @@
                 <div class="dlabnav-scroll">
                     <ul class="metismenu" id="menu">
                         <li>
-                            <a aria-expanded="false" class="has-arrow ai-icon" href="javascript:void()"><i class="flaticon-381-networking"></i> <span class="nav-text">Dashboard</span></a>
-                            <ul aria-expanded="false">
-                                <li>
-                                    <a href="index.html">Dashboard</a>
-                                </li>
-
-                                <li>
-                                    <a href="projects.html">Projects</a>
-                                </li>
-
-                                <li>
-                                    <a href="contacts.html">Contacts</a>
-                                </li>
-
-                                <li>
-                                    <a href="kanban.html">Kanban</a>
-                                </li>
-
-                                <li>
-                                    <a href="calendar.html">Calendar</a>
-                                </li>
-
-                                <li>
-                                    <a href="messages.html">Messages</a>
-                                </li>
-                            </ul>
+                            <a aria-expanded="false" class="ai-icon" href="javascript:void()"><i class="flaticon-381-networking"></i> <span class="nav-text">Dashboard</span></a>
+                        </li>
+                        <li>
+                            <a aria-expanded="false" class="ai-icon" href="{{ route('admin.userlist') }}"><i class="flaticon-381-user"></i> <span class="nav-text">Users</span></a>
                         </li>
 
                         <li>
